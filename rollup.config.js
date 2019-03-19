@@ -7,6 +7,8 @@ export default {
     format: 'cjs',
   },
   plugins: [
-    buble()
+    buble({
+      transforms: { dangerousTaggedTemplateString: true }
+    })
   ]
 }

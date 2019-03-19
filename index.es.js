@@ -1,3 +1,4 @@
+import { css as litCss } from 'lit-element';
 import { existsSync, mkdirSync, writeFile } from 'fs'
 import { dirname } from 'path'
 import { createFilter } from 'rollup-pluginutils'
@@ -23,7 +24,7 @@ export default function css (options = {}) {
         if (typeof options.processor === 'function') {
           return options.processor(css, styles)
         }
-        return css
+        return litCss`${css}`;
       } catch (e) {
         if (options.failOnError) {
           throw e
@@ -101,7 +102,6 @@ export default function css (options = {}) {
           if (dest.endsWith('.js')) {
             dest = dest.slice(0, -3)
           }
-          dest = dest + '.css'
         }
 
         // Ensure that dest parent folders exist (create the missing ones)

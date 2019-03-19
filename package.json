@@ -33,6 +33,7 @@
     "index.es.js"
   ],
   "dependencies": {
+    "lit-element": "^2.0.1",
     "node-sass": "4",
     "rollup-pluginutils": "2"
   },
