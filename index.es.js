@@ -99,9 +99,6 @@ export default function css (options = {}) {
 
           // Guess destination filename
           dest = opts.dest || opts.file || 'bundle.js'
-          if (dest.endsWith('.js')) {
-            dest = dest.slice(0, -3)
-          }
         }
 
         // Ensure that dest parent folders exist (create the missing ones)
